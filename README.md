@@ -16,6 +16,9 @@
 
 In this project, I analyzed the sales performance of a retail store based on the products sold across various regions in 2023 & 2024 using Excel, SQL and Power BI to draw interesting insights and to give a sum up of the data.
 
+
+<img width="597" alt="2024-11-16 (1)" src="https://github.com/user-attachments/assets/1559474d-20f9-4a51-ba62-741ed33128e5">
+
 ### Data Sources
 
 ### Tools Used
