@@ -101,5 +101,8 @@ ORDER BY TotalRevenue asc
 
 PowerBi was used for this visualization. Below are some of the intresting pictorial representation gotten from codes written on sql server; 
 
+<img width="595" alt="2024-11-16 (2)" src="https://github.com/user-attachments/assets/de2c5e6e-6f21-4600-a8c3-89076cc675af">
+
+
 
 
