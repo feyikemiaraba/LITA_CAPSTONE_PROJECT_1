@@ -12,7 +12,10 @@
 
 [Data Analysis](#data-analysis)
 
+[Visualization](#visualization)
+
 ### Project Overview
+---
 
 In this project, I analyzed the sales performance of a retail store based on the products sold across various regions in 2023 & 2024 using Excel, SQL and Power BI to draw interesting insights and to give a sum up of the data.
 
@@ -20,8 +23,12 @@ In this project, I analyzed the sales performance of a retail store based on the
 <img width="597" alt="2024-11-16 (1)" src="https://github.com/user-attachments/assets/1559474d-20f9-4a51-ba62-741ed33128e5">
 
 ### Data Sources
+---
+
+This Sales Data was gotten from The Incubatot Hub(LITA- Data analysis bootcamp)
 
 ### Tools Used
+---
 
 - Microsoft Excel - for data cleaning
   - [download here](https://microsoft.com)
@@ -31,6 +38,7 @@ In this project, I analyzed the sales performance of a retail store based on the
   - [download here](https://microsoft.com)
 
 ### Explorating Data Analysis
+---
 
 This involved exploring the sales data to answer key questions such as:
 
@@ -44,6 +52,7 @@ This involved exploring the sales data to answer key questions such as:
 - Identify products with no sales in the last quarter.
 
 ### Data Analysis 
+---
 
 Includes some exciting codes worked with on this project;
 
@@ -88,6 +97,9 @@ ORDER BY TotalRevenue asc
 ```
 
 ### Visualization
+---
+
+PowerBi was used for this visualization. Below are some of the intresting pictorial representation gotten from codes written on sql server; 
 
 
 
