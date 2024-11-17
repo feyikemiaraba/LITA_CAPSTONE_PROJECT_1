@@ -12,15 +12,18 @@
 
 [Data Analysis](#data-analysis)
 
-[Visualization](#visualization)
+[Visualization and Analyzation](#visualization-and-analyzation)
 
 ### Project Overview
 ---
 
 In this project, I analyzed the sales performance of a retail store based on the products sold across various regions in 2023 & 2024 using Excel, SQL and Power BI to draw interesting insights and to give a sum up of the data.
 
+<img width="594" alt="2024-11-17 (2)" src="https://github.com/user-attachments/assets/0be686c3-5ab4-4ded-854f-311f50dc0ebf">
 
-<img width="597" alt="2024-11-16 (1)" src="https://github.com/user-attachments/assets/1559474d-20f9-4a51-ba62-741ed33128e5">
+<img width="472" alt="2024-11-17" src="https://github.com/user-attachments/assets/a98203d7-747f-4fc9-97bd-491bb046159b">
+
+
 
 ### Data Sources
 ---
@@ -125,15 +128,25 @@ WHERE S2.OrderDate >= DATEADD(MONTH, -3, GETDATE())  
     )
 ```
 
-### Visualization
+### Visualization and Analyzation
 ---
 
 PowerBi was used for this visualization. Below are some of the intresting pictorial representation gotten from codes written on sql server; 
 
-<img width="472" alt="2024-11-17" src="https://github.com/user-attachments/assets/ce6753a1-9c71-4b8d-acaa-513d0fa157c4">
+#### 1. Sum of TotalSales by Product
+In the diagram below, it shows that SHOES, amongst all other product, is the highest selling product. On the Top 2, we have shoes and Shirt respectively while we have Jacket and Socks at the bottom 2. 
 
+<img width="467" alt="2024-11-17 (3)" src="https://github.com/user-attachments/assets/0facfa14-2bf8-4a98-97fc-a87d4ceb736c">
 
+#### 2. Total Revenue per Product
 
+<img width="390" alt="2024-11-17 (6)" src="https://github.com/user-attachments/assets/e502d517-5180-46bd-8bc6-e21438172605">
+
+#### 3. Number of Sales Transcation in Each Region
+<img width="441" alt="2024-11-17 (4)" src="https://github.com/user-attachments/assets/62802300-eba9-4104-8279-ce5585a05af7">
+
+#### 4. Highest Selling Products by TotalSales
+<img width="447" alt="2024-11-17 (5)" src="https://github.com/user-attachments/assets/8b852fab-bbfe-4396-a00e-7047b2a15d39">
 
 
 
