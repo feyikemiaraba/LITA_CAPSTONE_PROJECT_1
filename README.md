@@ -57,43 +57,72 @@ This involved exploring the sales data to answer key questions such as:
 Includes some exciting codes worked with on this project;
 
 ```sql server
-Select * from [dbo].[LITACAPSTONEPROJECT]
+select * from [dbo].[LITACAPSTONEPROJECT]
 
-SELECT Product, SUM(TotalSales) AS TotalSales FROM [dbo].[LITACAPSTONEPROJECT]
-GROUP BY Product ORDER by TotalSales asc
-
-WITH TotalSales AS (
-SELECT SUM(TotalSales) AS Total FROM [dbo].[LITACAPSTONEPROJECT]
-)
-SELECT Region, SUM(TotalSales) AS RegionSales,
-(SUM(TotalSales) / (SELECT Total FROM TotalSales)) * 100 AS PercentageOfTotalSales
-FROM [dbo].[LITACAPSTONEPROJECT] GROUP BY Region;
-
-SELECT Top 5 Customer_Id, SUM(TotalSales) AS TotalPurchaseAmount
+----------Total Sales for Each Product Category----------
+SELECT Product,
+SUM(TotalSales) AS TotalSales
 FROM [dbo].[LITACAPSTONEPROJECT]
-GROUP BY Customer_Id
-ORDER BY TotalPurchaseAmount DESC;
+GROUP BY Product
+ORDER by TotalSales asc
 
-SELECT MONTH(OrderDate) AS Month, SUM(TotalSales) AS MonthlySales
-FROM [dbo].[LITACAPSTONEPROJECT]
-WHERE YEAR(OrderDate) = YEAR(GETDATE())  -- Using GETDATE() for the current date in SQL Server
-GROUP BY MONTH(OrderDate)
-ORDER By Month desc
-
+-----------Number of Sales Transactions in Each Region-----------
 SELECT Region, COUNT(*) AS NumberOfTransactions
 FROM [dbo].[LITACAPSTONEPROJECT]
 GROUP BY Region
 ORDER by NumberOfTransactions asc
 
-SELECT TOP 1 Product, SUM(TotalSales) AS TotalSales
+----------Highest-Selling Product by Total Sales Value---------
+SELECT
+TOP 1 Product, 
+SUM(TotalSales) AS TotalSales
 FROM [dbo].[LITACAPSTONEPROJECT]
 GROUP BY Product
 ORDER BY TotalSales desc
 
-SELECT Product, SUM(TotalSales) AS TotalRevenue
+---------Total Revenue per Product-------
+SELECT Product, 
+SUM(TotalSales) AS TotalRevenue
 FROM [dbo].[LITACAPSTONEPROJECT]
 GROUP BY Product
 ORDER BY TotalRevenue asc
+
+---------Monthly Sales Totals for the Current Year-------------
+SELECT MONTH(OrderDate) AS Month, 
+SUM(TotalSales) AS MonthlySales
+FROM [dbo].[LITACAPSTONEPROJECT]
+WHERE YEAR(OrderDate) = YEAR(GETDATE())  -- Using GETDATE() for the current date in SQL Server
+GROUP BY MONTH(OrderDate)
+ORDER By Month desc
+
+-----------Top 5 Customers by Total Purchase Amount----------
+SELECT Top 5 Customer_Id, 
+SUM(TotalSales) AS TotalPurchaseAmount
+FROM [dbo].[LITACAPSTONEPROJECT]
+GROUP BY Customer_Id
+ORDER BY TotalPurchaseAmount DESC
+
+-------------Percentage of Total Sales Contributed by Each Region-------------
+WITH TotalSales AS (
+SELECT SUM(TotalSales) AS Total
+FROM [dbo].[LITACAPSTONEPROJECT]
+)
+SELECT Region, 
+SUM(TotalSales) AS RegionSales, 
+(SUM(TotalSales) / (SELECT Total FROM TotalSales)) * 100 AS PercentageOfTotalSales
+FROM [dbo].[LITACAPSTONEPROJECT]
+GROUP BY Region
+
+	---------Products with No Sales in the Last Quarter----------
+SELECT 
+DISTINCT S.Product
+FROM [dbo].[LITACAPSTONEPROJECT] AS S  -- Your sales data table
+WHERE S.Product NOT IN (
+SELECT 
+DISTINCT S2.Product
+FROM [dbo].[LITACAPSTONEPROJECT] AS S2 
+WHERE S2.OrderDate >= DATEADD(MONTH, -3, GETDATE())  
+    )
 ```
 
 ### Visualization
@@ -101,7 +130,9 @@ ORDER BY TotalRevenue asc
 
 PowerBi was used for this visualization. Below are some of the intresting pictorial representation gotten from codes written on sql server; 
 
-<img width="595" alt="2024-11-16 (2)" src="https://github.com/user-attachments/assets/de2c5e6e-6f21-4600-a8c3-89076cc675af">
+<img width="472" alt="2024-11-17" src="https://github.com/user-attachments/assets/ce6753a1-9c71-4b8d-acaa-513d0fa157c4">
+
+
 
 
 
